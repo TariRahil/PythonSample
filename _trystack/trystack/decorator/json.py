@@ -5,13 +5,13 @@ from trystack.util import jsonify
 def json_required(f):
 	@wraps(f)
 	def wrapper(*args, **kwargs):
-		if request.content_type!="application/json" :
+		if request.content_type != "application/json" :
 			return jsonify(
-				metadata={
+				metadata = {
 					"message": "Content type is not OK!"
 				},
-				status=415,
+				status = 415,
 			)
 		else:
 			return f(*args, **kwargs)
-	return wrapper
+	return wrapper;

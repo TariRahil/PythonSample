@@ -1,5 +1,5 @@
-def jsonify(state={}, metadata={}, header={}, status =200):
+def jsonify(state={}, metadata={}, headers={}, status=200):
 	resource={}
 	resource.update(state)
 	resource.update(metadata)
-	return resource, state, header
+	return resource, status, headers
